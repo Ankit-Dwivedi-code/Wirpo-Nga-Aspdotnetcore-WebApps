@@ -1,0 +1,46 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>Welcome to Razor pages</h1>
+
+<p>
+	This is a basic demo of Razor Pages in ASP.NET Core. Razor Pages is a page-based programming model that makes building web UI easier and more productive.
+</p>
+
+<p>
+	Current Server Time : <strong>@Model.CurrentTime</strong>
+</p>
+@* <div class="text-center"> *@
+@*     <h1 class="display-4">Welcome</h1> *@
+@*     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p> *@
+@* </div> *@
+
+
+
+@* Advantages of razor pages:
+- Simplified page-based programming model
+- we do not need any controller
+- Direct data binding with PageModel properties (Current time in this case)
+- Clear sepration of markup and logic
+- program.cs is simplified and separated from the page logic
+*@
+
+
+<h2>Simple Calculator</h2>
+
+<form method="post">
+    <input type="number" step="any" name="Number1" placeholder="Enter first number" required />
+    <select name="Operation">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" step="any" name="Number2" placeholder="Enter second number" required />
+    <button type="submit">Calculate</button>
+</form>
+
+<p><strong>Result:</strong> @Model.Result</p>
